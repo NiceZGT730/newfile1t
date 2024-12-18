@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกมทายดวงดาว</title>
+    <link rel="stylesheet" href="game2.css">
+    <link rel="stylesheet" href="font.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🪐 เกมทายดวงดาว 🪐</h1>
+        <p class="description">เลือกดาวเคราะห์ตามคุณสมบัติที่กำหนด</p>
+        
+        <div id="question">
+            <p class="question-title">คุณสมบัติ:</p>
+            <p id="description" class="planet-description"></p>
+        </div>
+
+        <div id="options" class="planet-options">
+            <button class="planet-btn" data-planet="sun">
+                <img src="img/sun.png" alt="Sun">
+                ดวงอาทิตย์
+            </button>
+            <button class="planet-btn" data-planet="mercury">
+                <img src="img/Mercury.png" alt="Mercury">
+                ดาวพุธ
+            </button>
+            <button class="planet-btn" data-planet="venus">
+                <img src="img/venus.png" alt="Venus">
+                ดาวศุกร์
+            </button>
+            <button class="planet-btn" data-planet="earth">
+                <img src="img/earth.png" alt="Earth">
+                โลก
+            </button>
+            <button class="planet-btn" data-planet="mars">
+                <img src="img/mars.png" alt="Mars">
+                ดาวอังคาร
+            </button>
+            <button class="planet-btn" data-planet="jupiter">
+                <img src="img/jupiter.png" alt="Jupiter">
+                ดาวพฤหัส
+            </button>
+            <button class="planet-btn" data-planet="saturn">
+                <img src="img/saturn.png" alt="Saturn">
+                ดาวเสาร์
+            </button>
+            <button class="planet-btn" data-planet="uranus">
+                <img src="img/uranus.png" alt="Uranus">
+                ดาวยูเรนัส
+            </button>
+            <button class="planet-btn" data-planet="neptune">
+                <img src="img/neptune.png" alt="Neptune">
+                ดาวเนปจูน
+            </button>
+        </div>
+        <div id="blur-background" class="blur-background"></div>
+        <div id="pass-message" class="pass-message">
+            <h2>ผ่าน!</h2>
+            <button id="play-again" onclick="resetGame()">เล่นอีกครั้ง</button>
+        </div>
+
+
+        <div class="result-container">
+            <div id="result" class="result"></div>
+            <div id="score" class="score"></div>
+        </div>
+    </div>
+    <div class="home-button">
+        <a href="Start.php" class="nav-btn menu-btn">Home</a>
+      </div>
+    
+    <!-- ปุ่มย้อนกลับและถัดไป -->
+      <div class="nav-buttons">
+        <a href="lesson2.html" class="nav-btn" title="ย้อนกลับ">&#8592;</a>
+        <a href="lesson3.html" class="nav-btn" title="ถัดไป">&#8594;</a>
+      </div>
+    <script src="game2.js"></script>
+</body>
+</html>

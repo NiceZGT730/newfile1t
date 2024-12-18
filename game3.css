@@ -1,0 +1,302 @@
+/* General Styles */
+body {
+    font-family: "K2D", sans-serif;
+    background: radial-gradient(circle, #000000, #1a1a3d);
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto; /* Allow vertical scrolling */
+    height: 100vh; /* Ensure the body takes the full viewport height */
+}
+
+.header {
+    position: relative; /* Relative positioning for header */
+    z-index: 1; /* Ensure the header stays on top */
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: #00d1ff;
+    text-shadow: 2px 2px 8px #ffffff;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #d4d4ff;
+}
+
+.header button {
+    background: rgba(0, 0, 255, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header button:hover {
+    background: #0055cc;
+}
+
+
+/* Background Stars Animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+.puzzle-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 50, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffcc;
+    max-width: 90%;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.side {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px #00ffcc;
+    margin: 10px; /* Add margin between sides */
+    min-width: 300px; /* Minimum width for responsiveness */
+}
+
+/* Section Headings */
+h3 {
+    color: #ff66b3;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Event Styles */
+.event {
+    background-color: #1f1f7a;
+    color: #00ffcc;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: grab;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.event:hover {
+    background-color: #0077ff;
+    transform: scale(1.05);
+}
+
+/* Drop Zone Styles */
+.drop-zone {
+    border: 2px dashed #ff66b3;
+    margin: 10px 0;
+    padding: 15px;
+    min-height: 50px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.drop-zone.hover {
+    background-color: #333366; /* Highlight when hovering */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    margin: 20px 0; /* Add some margin for spacing */
+    gap: 20px; /* Add space between buttons */
+}
+
+/* Button Styles */
+.button-container button {
+    background: linear-gradient(135deg, #4b0082, #00d1ff); /* Space-inspired gradient background (indigo to cyan) */
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Adjust padding for a comfortable size */
+    font-size: 1.5rem; /* Font size for readability */
+    border-radius: 25px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2); /* Subtle shadow for depth */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    position: relative; /* For pseudo-element positioning */
+    overflow: hidden; /* Contain the glow effect */
+}
+
+/* Hover Effects */
+.button-container button:hover {
+    background: linear-gradient(135deg, #00d1ff, #4b0082); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.5); /* Increased shadow for emphasis */
+}
+
+/* Active Effects */
+.button-container button:active {
+    transform: translateY(0); /* Reset lift on click */
+}
+
+/* Disabled State */
+.button-container button:disabled {
+    background: rgba(255, 255, 255, 0.1); /* Dimmed appearance */
+    color: rgba(255, 255, 255, 0.5); /* Change text color to indicate it's disabled */
+    cursor: not-allowed; /* Change cursor to indicate it's disabled */
+}
+
+/* Optional: Add a pseudo-element for a glowing effect */
+.button-container button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px; /* Match the button's border radius */
+    background: rgba(0, 255, 255, 0.3); /* Light glow (cyan) */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+/* Show glow effect on hover */
+.button-container button:hover::after {
+    opacity: 1; /* Show glow on hover */
+    animation: pulse 1.5s infinite; /* Pulse effect for a more dynamic look */
+}
+
+/* Keyframes for pulsing glow */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Shooting Star Animation */
+@keyframes shooting-star {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(200px) translateY(-50px);
+        opacity: 0;
+    }
+}
+
+.shooting-star {
+    position: absolute;
+    font-size: 1.5rem; /* Adjust size */
+    animation: shooting-star 1s linear infinite; /* Loop animation */
+    top: 50%; /* Start at a specific position */
+    left: 0;
+}
+
+/* Add background stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Make sure it does not interfere with mouse events */
+    z-index: -1; /* Send stars to the background */
+}
+
+.stars .star {
+    animation: twinkle 2s infinite alternate;
+}
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity for dimming */
+    backdrop-filter: blur(5px); /* Blur effect */
+}
+
+/* Modal Content */
+.modal-content {
+    background: linear-gradient(135deg, #1b1f32, #4c4e69); /* Space gradient */
+    border-radius: 10px; /* Rounded corners */
+    margin: auto; /* Center the modal */
+    padding: 20px; /* Inner padding */
+    border: 2px solid #fff; /* White border for contrast */
+    max-width: 500px; /* Maximum width */
+    width: 80%; /* Responsive width */
+    height: auto; /* Auto height */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+/* Close Button */
+.close-button {
+    color: #fff; /* White color for close button */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ffcc00; /* Bright color on hover for visibility */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Message */
+#modalMessage {
+    color: #fff; /* White text for message */
+    font-size: 18px; /* Font size */
+    text-align: center; /* Center the message */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+/* Stars Background */
+@keyframes stars {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><circle cx="10" cy="10" r="2" fill="white"/><circle cx="60" cy="20" r="3" fill="white"/><circle cx="200" cy="50" r="1.5" fill="white"/><circle cx="300" cy="100" r="1" fill="white"/><circle cx="500" cy="150" r="2" fill="white"/><circle cx="700" cy="300" r="1" fill="white"/><circle cx="600" cy="400" r="3" fill="white"/><circle cx="400" cy="500" r="2" fill="white"/></svg>') repeat;
+    animation: stars 50s linear infinite; /* Animation for star background */
+    z-index: -1; /* Behind the modal */
+}
+

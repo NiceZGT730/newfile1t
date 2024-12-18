@@ -1,0 +1,32 @@
+body {
+    background-image: url('./img/Home.png'); /* ระบุที่อยู่ของภาพ */
+    background-size: cover; /* ปรับภาพให้เต็มหน้าจอ */
+    background-repeat: no-repeat; /* ป้องกันการซ้ำของภาพ */
+    background-attachment: fixed; /* ทำให้พื้นหลังเลื่อนตามหรือไม่เลื่อนตามหน้าจอ */
+    background-position: center; /* กำหนดตำแหน่งภาพ */
+}
+.btn-enter {
+    display: inline-block;
+    background-color: #ff6f61; /* สีปุ่ม (ตัดกับสีดำ) */
+    color: #ffffff; /* สีตัวอักษร */
+    padding: 15px 30px; /* ขนาดปุ่ม */
+    font-size: 18px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวอักษรหนา */
+    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    border-radius: 50px; /* มุมมนของปุ่ม */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* เงาใต้ปุ่ม */
+    transition: all 0.3s ease; /* เพิ่มเอฟเฟกต์การเปลี่ยนแปลง */
+    margin-top: 600px;
+    margin-left: 550px;
+}
+
+.btn-enter:hover {
+    background-color: #ff4a3c; /* สีปุ่มเมื่อ Hover */
+    transform: scale(1.1); /* ขยายปุ่มเล็กน้อย */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* เงาเพิ่มขึ้น */
+}
+
+.btn-enter:active {
+    transform: scale(1); /* กลับมาขนาดเดิมเมื่อคลิก */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); /* เงาลดลง */
+}

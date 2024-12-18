@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+
+body {
+    font-family: "K2D", sans-serif; /* Font style for the entire game */
+    background: linear-gradient(135deg, #0b0c10, #1f2833); /* Dark gradient background for a cosmic feel */
+    color: #ffffff; /* Text color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Flexbox layout for centering */
+    flex-direction: column; /* Vertical stacking */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent overflow */
+}
+
+body::before {
+    content: ''; /* Create an overlay */
+    position: absolute; /* Positioning of the overlay */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.8) 80%); /* Radial gradient for a subtle overlay */
+    z-index: -1; /* Keep the overlay behind everything else */
+}
+
+.header {
+    width: 100%; /* Full width header */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Space above the title */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 10px; /* Soft rounded corners */
+}
+
+h1 {
+    font-size: 3rem; /* Bigger title */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center align title */
+    letter-spacing: 0.15rem; /* Extra space between letters for a sci-fi look */
+    color: #61dafb; /* Light blue for futuristic feel */
+    text-shadow: 0 0 15px rgba(97, 218, 251, 0.8), 0 0 30px rgba(33, 161, 241, 0.7); /* Glowing effect */
+}
+
+p {
+    text-align: center; /* Center align paragraph text */
+    font-size: 1.2rem; /* Slightly larger font size */
+    margin: 10px 0 20px; /* Space above and below */
+    color: #c5c6c7; /* Soft gray text */
+}
+
+.container {
+    display: flex; /* Flexbox layout for images and questions */
+    justify-content: space-between; /* Space between image and question */
+    background-color: rgba(30, 30, 30, 0.9); /* Semi-transparent dark background */
+    border-radius: 20px; /* Rounded corners */
+    padding: 40px; /* Space inside the container */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8); /* Shadow for depth */
+    width: 900px; /* Fixed width for larger screens */
+    max-width: 90%; /* Responsive width */
+    backdrop-filter: blur(10px); /* Blur effect for a modern look */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.container:hover {
+    transform: translateY(-10px); /* Lift effect when hovering over the container */
+}
+
+.image-container {
+    flex: 1; /* Allow image container to take up equal space */
+    margin-right: 20px; /* Space between image and question */
+}
+
+.event-image {
+    width: 100%; /* Full width of its container */
+    height: 400px; /* Consistent height for images */
+    border-radius: 15px; /* Rounded corners for image */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); /* Shadow effect on image */
+    transition: transform 0.5s ease; /* Smooth transition for hover */
+    object-fit: cover; /* Maintain aspect ratio of the image */
+}
+
+.event-image:hover {
+    transform: scale(1.08); /* Larger scale effect for more dramatic zoom */
+}
+
+.question-container {
+    flex: 1; /* Allow question container to take up equal space */
+    text-align: left; /* Align text to the left */
+}
+
+.answer-buttons {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+    gap: 20px; /* Space between buttons */
+    width: 100%; /* Make sure it takes the full width */
+}
+
+.btn {
+    width: 100%; /* Full width for buttons */
+    padding: 15px; /* Padding for buttons */
+    border: none; /* Remove border */
+    border-radius: 15px; /* More rounded corners */
+    background-color: #61dafb; /* Button color */
+    color: #0b0c10; /* Text color */
+    font-size: 1.2rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Shadow for button depth */
+    text-align: center; /* Center text */
+}
+
+.btn:hover {
+    background-color: #21a1f1; /* Darker color on hover */
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.btn:active {
+    transform: translateY(1px); /* Pressed effect */
+}
+
+.score {
+    margin-top: 20px; /* Space above score */
+    font-size: 18px; /* Font size for score */
+    color: #61dafb; /* Color for score */
+    text-shadow: 0 0 10px rgba(97, 218, 251, 0.5); /* Glowing effect */
+}
+
+/* Additional futuristic glowing animation for buttons */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px #61dafb, 0 0 10px #61dafb, 0 0 15px #61dafb;
+    }
+    50% {
+        box-shadow: 0 0 15px #21a1f1, 0 0 20px #21a1f1, 0 0 25px #21a1f1;
+    }
+    100% {
+        box-shadow: 0 0 5px #61dafb, 0 0 10px #61dafb, 0 0 15px #61dafb;
+    }
+}
+
+.btn:hover {
+    animation: glowing 1.5s infinite; /* Glowing effect on hover */
+}

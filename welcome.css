@@ -1,0 +1,43 @@
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .score-cell {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .high-score {
+        background-color: #d4edda; /* สีเขียวอ่อน */
+        color: #155724; /* สีตัวหนังสือเขียวเข้ม */
+    }
+
+    .medium-score {
+        background-color: #fff3cd; /* สีเหลืองอ่อน */
+        color: #856404; /* สีตัวหนังสือเหลืองเข้ม */
+    }
+
+    .low-score {
+        background-color: #f8d7da; /* สีแดงอ่อน */
+        color: #721c24; /* สีตัวหนังสือแดงเข้ม */
+    }
+
+    tr:hover {
+        background-color: #f1f1f1; /* สีพื้นหลังเมื่อ hover */
+    }
+

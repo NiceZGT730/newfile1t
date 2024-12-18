@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>จับคู่นักวิทยาศาสตร์ในอวกาศ</title>
+
+    <link rel="stylesheet" href="game4.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="falling-stars">
+
+        <div class="falling-star star"></div>
+
+        <div class="falling-star star"></div>
+
+        <div class="falling-star star"></div>
+
+        <div class="falling-star star"></div>
+
+        <div class="falling-star star"></div>
+
+        <div class="falling-star star"></div>
+
+        <div class="falling-star star"></div>
+
+        <div class="falling-star star"></div>
+
+        <div class="falling-star star"></div>
+
+    </div>
+
+    <div class="game-container">
+
+        <div class="text">
+
+        <h1>จับคู่นักวิทยาศาสตร์กับเหตุการณ์</h1>
+
+        </div>
+
+        <div class="row">
+
+            <!-- นักวิทยาศาสตร์ -->
+
+            <div class="scientists">
+
+                <h2>นักวิทยาศาสตร์</h2>
+
+                <ul id="scientist-list">
+
+                    <li draggable="true" id="copernicus">นิโคเลาส์ โคเปอร์นิคัส</li>
+
+                    <li draggable="true" id="galileo">กาลิเลโอ กาลิเลอี</li>
+
+                    <li draggable="true" id="brahe">ไทโค บราห์</li>
+
+                    <li draggable="true" id="aristarchus">อริสตาคัส</li>
+
+                    <li draggable="true" id="ptolemy">คลอเดียส ปโตเลมี</li>
+
+                </ul>
+
+            </div>
+
+        
+
+            <!-- รูปภาพ -->
+
+            <div class="images">
+
+                <h2>รูปภาพ</h2>
+
+                <div class="image-grid">
+
+                    <img src="img/nicolaus (2).png" alt="หนังสือ" class="image-slot" id="copernicus-img">
+
+                    <img src="img/22.png" alt="กล้องโทรทรรศน์" class="image-slot" id="galileo-img">
+
+                    <img src="img/Tychonic.png" alt="หอดูดาว" class="image-slot" id="brahe-img">
+
+                    <img src="img/4.png" alt="ระบบสุริยะโบราณ" class="image-slot" id="aristarchus-img">
+
+                    <img src="img/55.png" alt="แผนที่ดาราศาสตร์" class="image-slot" id="ptolemy-img">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <button id="reset-btn">เริ่มใหม่</button>
+
+
+
+    <div id="result"></div>
+
+    <div class="home-button">
+
+        <a href="Start.php" class="nav-btn menu-btn">Home</a>
+
+    </div>
+
+    
+
+    <!-- ปุ่มย้อนกลับและถัดไป -->
+
+    <div class="nav-buttons">
+
+        <a href="Astronomer.html" class="nav-btn" title="ย้อนกลับ">&#8592;</a>
+
+        <a href="lesson4.html" class="nav-btn" title="ถัดไป">&#8594;</a>
+
+    </div>
+
+
+
+    <!-- ใส่เสียง -->
+
+    <audio id="correct-sound" src="correct.mp3" preload="auto"></audio>
+
+    <audio id="wrong-sound" src="wrong.mp3" preload="auto"></audio>
+
+
+
+    <script src="game4.js"></script>
+
+</body>
+
+</html>
+

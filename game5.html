@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกมทายภาพเหตุการณ์ทางดาราศาสตร์</title>
+    <link rel="stylesheet" href="game5.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="font.css">
+<style>
+    /* ปุ่ม Home */
+.home-button {
+    position: fixed;
+    top: 20px; /* ชิดด้านบน */
+    left: 20px; /* ชิดด้านซ้าย */
+}
+.nav-buttons {
+    position: fixed;
+    top: 20px;
+    right: 70px;
+}
+
+a, button {
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #ffcc00;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+a:hover, button:hover {
+    background-color: #ffcc00;
+    transform: scale(1.2);
+}
+a:active, button:active {
+    background-color: #e6b800;
+}
+</style>
+</head>
+
+<body>
+    <div class="home-button">
+        <a href="Start.php" class="nav-btn menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
+            <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3zm1 13h8V2H4z"></path>
+            <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path>
+            </svg>Home</a>
+    </div>
+    
+    <!-- ปุ่มย้อนกลับและถัดไป -->
+    <div class="nav-buttons">
+        <a href="lesson5_2.html" class="nav-btn" title="ย้อนกลับ">&#8592;</a>
+    </div>
+
+        
+    
+    
+
+        <h1 class="mt-5">🌌ทายภาพเหตุการณ์ทางดาราศาสตร์ 🌌</h1> <!-- Game title -->
+        <p>เลือกเหตุการณ์ที่เข้ากับภาพที่ถูกต้อง</p> <!-- Instructions -->
+    </div>
+    <div class="container">
+        <div class="image-container">
+            <img id="event-image" class="event-image" alt="เหตุการณ์ทางดาราศาสตร์">
+        </div>
+        <div class="question-container">
+            <p id="question" class="question"></p>
+            <div id="answer-buttons" class="answer-buttons"></div>
+            <p id="score-container" class="score">คะแนน: 0</p> <!-- กล่องคะแนนแสดงตั้งแต่แรก -->
+        </div>
+    </div>
+    <script src="./scp/game5.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
