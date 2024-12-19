@@ -1,223 +1,446 @@
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-
-.container {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.3);
-    max-width: 900px;
-}
-
-h1 {
-    font-size: 3rem;
-    color: #ffeb3b;
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b;
-}
-
-.description {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.question-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.planet-description {
-    font-size: 1.1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.planet-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.planet-btn {
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    padding: 10px;
-    width: 150px;  /* ปรับขนาดปุ่ม */
-    height: 180px; /* ปรับขนาดปุ่ม */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.planet-btn[data-planet="sun"] {
-    color: #FFD700; /* สีทองสำหรับดวงอาทิตย์ */
-}
-
-.planet-btn[data-planet="mercury"] {
-    color: #C0C0C0; /* สีเงินสำหรับดาวพุธ */
-}
-
-.planet-btn[data-planet="venus"] {
-    color: #FF69B4; /* สีชมพูสำหรับดาวศุกร์ */
-}
-
-.planet-btn[data-planet="earth"] {
-    color: #1E90FF; /* สีน้ำเงินสำหรับโลก */
-}
-
-.planet-btn[data-planet="mars"] {
-    color: #FF4500; /* สีแดงส้มสำหรับดาวอังคาร */
-}
-
-.planet-btn[data-planet="jupiter"] {
-    color: #CD853F; /* สีน้ำตาลอ่อนสำหรับดาวพฤหัส */
-}
-
-.planet-btn[data-planet="saturn"] {
-    color: #DAA520; /* สีทองอ่อนสำหรับดาวเสาร์ */
-}
-
-.planet-btn[data-planet="uranus"] {
-    color: #00CED1; /* สีฟ้าน้ำทะเลสำหรับดาวยูเรนัส */
-}
-
-.planet-btn[data-planet="neptune"] {
-    color: #4169E1; /* สีฟ้าเข้มสำหรับดาวเนปจูน */
-}
-
-.planet-btn img {
-    width: 80px;  /* ปรับขนาดรูปภาพ */
-    height: 80px;
-    margin-bottom: 10px;
-}
-
-.planet-btn:hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.result-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    position: relative;
-}
-
-.result {
-    font-size: 1.8rem;
-    color: #ffeb3b;
-    text-shadow: 0 0 10px #ffeb3b;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.score {
-    font-size: 1.5rem;
-    color: #ffffff; /* เปลี่ยนสีตามต้องการ */
-    margin-left: auto; /* ทำให้คะแนนชิดขวา */
-}
-
-
-.blur-background {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-}
-
-.pass-message {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(251, 251, 252, 0.9);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    z-index: 1000;
-}
-
-.pass-message h2 {
-    color: #000000;
-}
-
-.pass-message button {
-    background-color: #1E90FF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.pass-message button:hover {
-    background-color: #00BFFF;
-}
-
-
-/* ปุ่ม Home */
-.home-button {
-    position: fixed;
-    bottom: 20px; /* ชิดด้านล่าง */
-    left: 20px; /* ชิดด้านซ้าย */
-    padding: 15px; /* ขนาดพื้นที่ในปุ่ม */
-    border-radius: 50%; /* ปุ่มทรงวงกลม */
-    font-size: 1.5rem; /* ขนาดตัวอักษร/ไอคอน */
-    text-decoration: none; /* ลบเส้นใต้ */
-    text-align: center; /* จัดข้อความกึ่งกลาง */
-  }
-  
-  .nav-buttons {
-    position: absolute;
-    bottom: 20px; /* ชิดด้านล่าง */
-    right: 20px; /* ชิดด้านขวา */
-    display: flex; /* เรียงในแนวนอน */
-    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
-  }
-  
-  a, button {
-    padding: 10px;
-    font-size: 18px;
-    color: #fff;
-    background-color: transparent;
-    border: 2px solid #ffcc00;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-left: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-  }
-  
-  a:hover, button:hover {
-    background-color: #ffcc00;
-    transform: scale(1.2);
-  }
-  
-  a:active, button:active {
-    background-color: #e6b800;
-  }
+body {
+
+    margin: 0;
+
+    font-family: 'Roboto', sans-serif;
+
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+
+    color: #ffffff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100vh;
+
+    text-align: center;
+
+}
+
+
+
+.container {
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.3);
+
+    max-width: 900px;
+
+}
+
+
+
+h1 {
+
+    font-size: 3rem;
+
+    color: #ffeb3b;
+
+    margin-bottom: 10px;
+
+    text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b;
+
+}
+
+
+
+.description {
+
+    font-size: 1.2rem;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.question-title {
+
+    font-size: 1.5rem;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.planet-description {
+
+    font-size: 1.1rem;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+}
+
+
+
+.planet-options {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+}
+
+
+
+.planet-btn {
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    border: 2px solid #ffffff;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    width: 150px;  /* ปรับขนาดปุ่ม */
+
+    height: 180px; /* ปรับขนาดปุ่ม */
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+}
+
+
+
+.planet-btn[data-planet="sun"] {
+
+    color: #FFD700; /* สีทองสำหรับดวงอาทิตย์ */
+
+}
+
+
+
+.planet-btn[data-planet="mercury"] {
+
+    color: #C0C0C0; /* สีเงินสำหรับดาวพุธ */
+
+}
+
+
+
+.planet-btn[data-planet="venus"] {
+
+    color: #FF69B4; /* สีชมพูสำหรับดาวศุกร์ */
+
+}
+
+
+
+.planet-btn[data-planet="earth"] {
+
+    color: #1E90FF; /* สีน้ำเงินสำหรับโลก */
+
+}
+
+
+
+.planet-btn[data-planet="mars"] {
+
+    color: #FF4500; /* สีแดงส้มสำหรับดาวอังคาร */
+
+}
+
+
+
+.planet-btn[data-planet="jupiter"] {
+
+    color: #CD853F; /* สีน้ำตาลอ่อนสำหรับดาวพฤหัส */
+
+}
+
+
+
+.planet-btn[data-planet="saturn"] {
+
+    color: #DAA520; /* สีทองอ่อนสำหรับดาวเสาร์ */
+
+}
+
+
+
+.planet-btn[data-planet="uranus"] {
+
+    color: #00CED1; /* สีฟ้าน้ำทะเลสำหรับดาวยูเรนัส */
+
+}
+
+
+
+.planet-btn[data-planet="neptune"] {
+
+    color: #4169E1; /* สีฟ้าเข้มสำหรับดาวเนปจูน */
+
+}
+
+
+
+.planet-btn img {
+
+    width: 80px;  /* ปรับขนาดรูปภาพ */
+
+    height: 80px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.planet-btn:hover {
+
+    transform: scale(1.1);
+
+    background-color: rgba(255, 255, 255, 0.2);
+
+}
+
+
+
+.result-container {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    position: relative;
+
+}
+
+
+
+.result {
+
+    font-size: 1.8rem;
+
+    color: #ffeb3b;
+
+    text-shadow: 0 0 10px #ffeb3b;
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+
+.score {
+
+    font-size: 1.5rem;
+
+    color: #ffffff; /* เปลี่ยนสีตามต้องการ */
+
+    margin-left: auto; /* ทำให้คะแนนชิดขวา */
+
+}
+
+
+
+
+
+.blur-background {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    z-index: 999;
+
+}
+
+
+
+.pass-message {
+
+    display: none;
+
+    position: fixed;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(251, 251, 252, 0.9);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    z-index: 1000;
+
+}
+
+
+
+.pass-message h2 {
+
+    color: #000000;
+
+}
+
+
+
+.pass-message button {
+
+    background-color: #1E90FF;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    padding: 10px 20px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+
+}
+
+
+
+.pass-message button:hover {
+
+    background-color: #00BFFF;
+
+}
+
+
+
+
+
+/* ปุ่ม Home */
+
+.home-button {
+
+    position: fixed;
+
+    bottom: 20px; /* ชิดด้านล่าง */
+
+    left: 20px; /* ชิดด้านซ้าย */
+
+    padding: 15px; /* ขนาดพื้นที่ในปุ่ม */
+
+    border-radius: 20%; /* ปุ่มทรงวงกลม */
+
+    font-size: 1.5rem; /* ขนาดตัวอักษร/ไอคอน */
+
+    text-decoration: none; /* ลบเส้นใต้ */
+
+    text-align: center; /* จัดข้อความกึ่งกลาง */
+
+  }
+
+  
+
+  .nav-buttons {
+
+    position: absolute;
+
+    bottom: 20px; /* ชิดด้านล่าง */
+
+    right: 20px; /* ชิดด้านขวา */
+
+    display: flex; /* เรียงในแนวนอน */
+
+    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+
+  }
+
+  
+
+  a, button {
+
+    padding: 10px;
+
+    font-size: 18px;
+
+    color: #fff;
+
+    background-color: transparent;
+
+    border: 2px solid #ffcc00;
+
+    border-radius: 20%;
+
+    cursor: pointer;
+
+    margin-left: 5px;
+
+    transition: background-color 0.3s, transform 0.2s;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    text-align: center;
+
+  }
+
+  
+
+  a:hover, button:hover {
+
+    background-color: #ffcc00;
+
+    transform: scale(1.2);
+
+  }
+
+  
+
+  a:active, button:active {
+
+    background-color: #e6b800;
+
+  }
+

@@ -65,7 +65,7 @@
     <!-- ปุ่มย้อนกลับและถัดไป -->
     <div class="nav-buttons">
         <a href="lesson1_3.php" class="nav-btn" title="ย้อนกลับ">&#8592;</a>
-        <a href="indexsun.html" class="nav-btn" title="ถัดไป">&#8594;</a>
+        <a href="endof1.php" class="nav-btn" title="ถัดไป">&#8594;</a>
     </div>
     <audio id="correct-sound" src="game1/correct.mp3"></audio>
     <audio id="wrong-sound" src="game1/wrong.mp3"></audio>    

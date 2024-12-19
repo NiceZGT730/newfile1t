@@ -1,0 +1,93 @@
+/* styles.css */
+body {
+    font-family: 'Itim', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+}
+
+header {
+    background-color: #f8f9fa;
+}
+
+.logo h1 {
+    font-family: 'K2D', sans-serif;
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.hero {
+    background: linear-gradient(to right, #f7f7ff, #e3d8ff);
+}
+
+.hero-text h2 {
+    font-family: 'K2D', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.hero-text p {
+    font-family: 'K2D', sans-serif;
+    color: #666;
+}
+
+.hero-btn {
+    padding: 10px 20px;
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.programs .card {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.program .icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+
+
+
+.program-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    background-color: #f8f9fa;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-purple {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+.btn-purple:hover {
+    background-color: #5e33a2;
+    border-color: #5e33a2;
+}

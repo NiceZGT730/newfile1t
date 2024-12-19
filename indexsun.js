@@ -9,8 +9,9 @@ import { getFresnelMat } from "./src/getFresnelMatX6.js";
 const w = window.innerWidth;
 const h = window.innerHeight;
 const scene = new THREE.Scene(); // สร้างฉากหลัก
-const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000); // สร้างกล้องมุมมอง
-camera.position.z = 5; // ตั้งตำแหน่งกล้อง
+const camera = new THREE.PerspectiveCamera(65, w / h, 0.1, 1000);
+
+camera.position.z = 20; // ตั้งตำแหน่งกล้อง
 const renderer = new THREE.WebGLRenderer({ antialias: true }); // สร้าง renderer สำหรับการเรนเดอร์ภาพ
 renderer.setSize(w, h); // กำหนดขนาดของ renderer ตามขนาดหน้าต่าง
 document.body.appendChild(renderer.domElement); // ใส่ renderer ใน DOM
@@ -126,3 +127,4 @@ const auraMaterial = new THREE.ShaderMaterial({
 const auraMesh = new THREE.Mesh(auraGeometry, auraMaterial);
 auraMesh.position.set(0, 0, 0); // ตั้งตำแหน่งให้ตรงกับพระอาทิตย์
 scene.add(auraMesh); // เพิ่ม Aura ลงในฉาก
+
