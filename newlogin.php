@@ -92,6 +92,10 @@
     </style>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+       
+        
+     
+
         <div class="mb-3">
             <label for="email" class="form-label">Email Address</label>
             <input type="email" class="form-control" name="email" placeholder="Enter your email" required>

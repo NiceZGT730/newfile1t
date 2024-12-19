@@ -51,6 +51,20 @@
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
         <div class="mb-3">
+
+        <?php
+        
+         if (isset($_SESSION['success_message'])) {
+             echo "<div class='success'>" . $_SESSION['success_message'] . "</div>";
+             unset($_SESSION['success_message']); // ลบข้อความหลังแสดงแล้ว
+         }
+         
+         if (isset($_SESSION['error_message'])) {
+             echo "<div class='error'>" . $_SESSION['error_message'] . "</div>";
+             unset($_SESSION['error_message']); // ลบข้อความหลังแสดงแล้ว
+         }
+         
+        ?>
             <label for="email" class="form-label">Email address</label>
             <input type="email" class="form-control" name="email" aria-describedby="email">
 </div>

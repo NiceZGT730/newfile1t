@@ -1,7 +1,7 @@
 <?php include_once('header.php'); ?>
 <?php include_once('nav.php'); ?>
 
-<link rel="stylesheet" href="style.css">
+
 <link rel="stylesheet" href="font.css">
 
 <?php
@@ -13,7 +13,7 @@
 
 <!-- การจัดคอนเทนต์ของหน้าเว็บ -->
 <div class="container align-items-center">
-    <h1 class="display-4 mt-3">Regis E-learning Solar System</h1>
+    <h1 class="display-4 mt-3">E-learning Solar System</h1>
     
 </div>
 
@@ -21,10 +21,12 @@
 <br><br>
 
     <style>
+    
     iframe {
             padding: 12px !important;
             border: none; /* ไม่มีขอบ */
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* ใส่เงาเบาๆ (ถ้าต้องการ) */
+            border-radius: 10px;
         }
     body {
         background-color: #E4E0E1 !important;

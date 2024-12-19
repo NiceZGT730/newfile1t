@@ -32,10 +32,16 @@
                 $bs->displayAlert('This email already exists. Try another.', 'danger');
             }
             
-            if ($users->createUser()) {
-                $bs->displayAlert('User created successfully!', 'success');
+            if ($userRegister->createUser()) {
+                // หากสร้างผู้ใช้สำเร็จ
+                $_SESSION['success_message'] = "Registration successful! Please login.";
+                header("Location: login.php"); // เปลี่ยนหน้าไป login.php
+                exit();
             } else {
-                $bs->displayAlert('Failed to create user!', 'danger');
+                // หากสร้างผู้ใช้ไม่สำเร็จ
+                $_SESSION['error_message'] = "Registration failed. Please try again.";
+                header("Location: register.php"); // กลับไปหน้า register.php
+                exit();
             }
         }
     ?>

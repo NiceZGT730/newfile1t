@@ -41,11 +41,15 @@
         }
         
         if ($users->createUser()) {
-            $bs->displayAlert('User Create successfully!', 'success');
-            //echo '<div class="alert alert-success" role="alert">Failed to create user!</div>';
-        }else{
-            $bs->displayAlert('Failed to create user!', 'danger');
-            //echo '<div class="alert alert-danger" role="alert">Failed to create user!</div>';
+            // หากสร้างผู้ใช้สำเร็จ
+            $_SESSION['success_message'] = "Registration successful! Please login.";
+            header("Location: signin.php"); // เปลี่ยนหน้าไป login.php
+            exit();
+        } else {
+            // หากสร้างผู้ใช้ไม่สำเร็จ
+            $_SESSION['error_message'] = "Registration failed. Please try again.";
+            header("Location: signup.php"); // กลับไปหน้า register.php
+            exit();
         }
     }
     
