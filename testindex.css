@@ -83,11 +83,11 @@ header {
 }
 
 .btn-purple {
-    background-color: #6f42c1;
-    border-color: #6f42c1;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
 .btn-purple:hover {
-    background-color: #5e33a2;
-    border-color: #5e33a2;
+    background-color: #007bff;
+    border-color: #007bff;
 }
