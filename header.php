@@ -4,6 +4,11 @@ $conn = new mysqli('localhost', 'root', '', 'login_regis_db');
 
     session_start();
 
+    if (!isset($_SESSION['userid'])) {
+        header("Location: testlogin.php");
+        exit(); 
+    }
+
 ?>
 
 

@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['userid'])) {
+    // ถ้าไม่มีการกำหนด $_SESSION['userid'] ให้เปลี่ยนเส้นทางไปที่หน้า login
+    header("Location: testlogin.php");
+    exit(); // หยุดการทำงานของ script เพื่อให้แน่ใจว่าจะไม่ประมวลผลโค้ดด้านล่าง
+}
+?>
+
 <!DOCTYPE html>
 
 <html lang="th">
