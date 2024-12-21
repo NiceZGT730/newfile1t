@@ -65,33 +65,28 @@
 
 
         public function verifyPassword() {
-
-            $query = "SELECT id, password, pretest_done FROM {$this->table_name} WHERE email = :email LIMIT 1";
+            $query = "SELECT id, password, pretest_done, name FROM {$this->table_name} WHERE email = :email LIMIT 1";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(":email", $this->email);
             $stmt->execute();
         
             if ($stmt->rowCount() == 1) {
-        
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 $hashedPassword = $row['password'];
         
                 if (password_verify($this->password, $hashedPassword)) {
-        
                     // ตั้งค่าผู้ใช้ใน session
                     $_SESSION['userid'] = $row['id'];
-        
+                    $_SESSION['username'] = $row['name']; // เพิ่มการตั้งค่าชื่อผู้ใช้ใน session
+                    $_SESSION['email'] = $row['email'];
                     // เช็คสถานะ pretest_done
                     if ($row['pretest_done'] == 0) {
-                        // ถ้ายังไม่ได้ทำ Pretest ให้รีไดเรกต์ไปหน้า Pretest
-                        header('Location: pretest.php');
+                        header('Location: pretest1.php');
                         exit();
                     } else {
-                        // ถ้าผู้ใช้ทำ Pretest แล้ว ให้ไปที่หน้า Welcome หรือแดชบอร์ด
-                        header('Location: welcome.php');
+                        header('Location: testindex.php');
                         exit();
                     }
-        
                 } else {
                     return false; // รหัสผ่านไม่ถูกต้อง
                 }
@@ -99,6 +94,7 @@
         
             return false; // อีเมลไม่พบ
         }
+        
         
 
         public function userData($userid){
@@ -139,7 +135,7 @@
 
             //session_destroy();
 
-            header('Location: signin.php');
+            header('Location: testindex.php');
 
             exit();
 

@@ -103,15 +103,15 @@ hr{
     <header class="bg-light py-3 border-bottom">
         <div class="container d-flex justify-content-start align-items-center">
             <div class="logo">
-                <a href="testindex.html"><img src="logosolar.png" width="150px" alt="Logo" class="logo"></a>
+                <a href="testindex.php"><img src="logosolar.png" width="150px" alt="Logo" class="logo"></a>
             </div>
             <nav class="ms-3"> 
                 <ul class="nav">
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">หมวดหมู่</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="testchapter.html">เนื้อหาบทเรียน</a></li>
-                            <li><a class="dropdown-item" href="testquiz.html">แบบทดสอบหลังเรียน</a></li>
+                            <li><a class="dropdown-item" href="testchapter.php">เนื้อหาบทเรียน</a></li>
+                            <li><a class="dropdown-item" href="testquiz.php">แบบทดสอบหลังเรียน</a></li>
                             <li><a class="dropdown-item" href="testgame.html">เกมฝึกฝนทักษะ</a></li>
                         </ul>
                     </li>
@@ -181,7 +181,7 @@ hr{
                             ⭐ 4.6
                         </div>
                         <div class="text-center mt-3">
-                            <a href="lesson3.html" class="btn btn-primary">เริ่มเรียน</a>
+                            <a href="lesson3.php" class="btn btn-primary">เริ่มเรียน</a>
                         </div>
                     </div>
                 </div>
@@ -199,7 +199,7 @@ hr{
                             ⭐ 4.9
                         </div>
                         <div class="text-center mt-3">
-                            <a href="lesson4.html" class="btn btn-primary">เริ่มเรียน</a>
+                            <a href="lesson4.php" class="btn btn-primary">เริ่มเรียน</a>
                         </div>
                     </div>
                 </div>
